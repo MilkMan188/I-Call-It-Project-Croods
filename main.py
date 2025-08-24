@@ -6,11 +6,12 @@ import sys
 
 app = QApplication(sys.argv)
 
-gif_path = "img/phaesia_twerk2.gif"
+audio_path = "audio/croods_song.mp3"
+img_path = "img/grug.jpg"
 script_dir = os.path.dirname(os.path.realpath(__file__))
 os.chdir(script_dir)
 
-window = Widget(gif_path)
+window = Widget(audio_path, img_path)
 window.show()
 
 app.exec()
