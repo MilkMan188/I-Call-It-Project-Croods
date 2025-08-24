@@ -5,15 +5,16 @@ from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PySide6.QtCore import QUrl
 
 class Widget(QWidget):
-    def __init__(self, audio_path, img_path, parent=None):
+    def __init__(self, audio_path, earrape_path, img_path, gurg_path, parent=None):
         super().__init__()
 
         #Sets audio player
         self.audio_output = QAudioOutput()
         self.player = QMediaPlayer()
         self.player.setAudioOutput(self.audio_output)
-        self.player.setSource(QUrl.fromLocalFile(audio_path))
+        self.audio_path = audio_path
         self.player.setLoops(QMediaPlayer.Infinite)
+        self.earrape_path = earrape_path
 
         #Sets window title
         self.setWindowTitle("PhaesiaTwerk")
@@ -30,6 +31,8 @@ class Widget(QWidget):
         self.label.setAttribute(Qt.WA_TranslucentBackground)
 
         #Loads/Starts GIF
+        self.img_path = img_path
+        self.gurg_path = gurg_path
         self.movie = QMovie(img_path)
         self.label.setMovie(self.movie)
         self.movie.start()
@@ -61,7 +64,15 @@ class Widget(QWidget):
     
     def mouseDoubleClickEvent(self, event):
         if event.button() == Qt.LeftButton:
+            self.player.setSource(QUrl.fromLocalFile(self.audio_path))
+            self.movie.setFileName(self.img_path)
+            self.label.setMovie(self.movie)
             self.player.play()
         elif event.button() == Qt.RightButton:
             self.player.stop()
+        elif event.button() == Qt.MiddleButton:
+            self.player.setSource(QUrl.fromLocalFile(self.earrape_path))
+            self.movie.setFileName(self.gurg_path)
+            self.label.setMovie(self.movie)
+            self.player.play()
 

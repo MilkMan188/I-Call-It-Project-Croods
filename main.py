@@ -7,11 +7,13 @@ import sys
 app = QApplication(sys.argv)
 
 audio_path = "audio/croods_song.mp3"
+earrape_path = "audio/earrape.mp3"
 img_path = "img/grug.jpg"
+gurg_path = "img/gurg.jpg"
 script_dir = os.path.dirname(os.path.realpath(__file__))
 os.chdir(script_dir)
 
-window = Widget(audio_path, img_path)
+window = Widget(audio_path, earrape_path, img_path, gurg_path)
 window.show()
 
 app.exec()
