@@ -65,14 +65,19 @@ class Widget(QWidget):
     def mouseDoubleClickEvent(self, event):
         if event.button() == Qt.LeftButton:
             self.player.setSource(QUrl.fromLocalFile(self.audio_path))
-            self.movie.setFileName(self.img_path)
+            self.movie = QMovie(self.img_path)
+            self.movie.setScaledSize(self.size())
             self.label.setMovie(self.movie)
-            self.player.play()
-        elif event.button() == Qt.RightButton:
-            self.player.stop()
-        elif event.button() == Qt.MiddleButton:
-            self.player.setSource(QUrl.fromLocalFile(self.earrape_path))
-            self.movie.setFileName(self.gurg_path)
-            self.label.setMovie(self.movie)
+            self.movie.start()
             self.player.play()
 
+        elif event.button() == Qt.RightButton:
+            self.player.stop()
+
+        elif event.button() == Qt.MiddleButton:
+            self.player.setSource(QUrl.fromLocalFile(self.earrape_path))
+            self.movie = QMovie(self.gurg_path)
+            self.movie.setScaledSize(self.size())
+            self.label.setMovie(self.movie)
+            self.movie.start()
+            self.player.play()
