@@ -17,7 +17,7 @@ class Widget(QWidget):
         self.earrape_path = earrape_path
 
         #Sets window title
-        self.setWindowTitle("PhaesiaTwerk")
+        self.setWindowTitle("Grug")
 
         #Sets default window size
         self.resize(600,600)
