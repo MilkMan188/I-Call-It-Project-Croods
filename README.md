@@ -1,2 +1,2 @@
 It Rhymes with Grug
-![alt text](https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2F6pm92lz2hs191.jpg)
+![alt text](https://ih1.redbubble.net/image.4968094424.9854/raf,360x360,075,t,fafafa:ca443f4786.jpg)
